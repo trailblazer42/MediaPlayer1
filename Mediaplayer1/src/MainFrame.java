@@ -58,10 +58,11 @@ public class MainFrame extends JFrame implements ActionListener{
 		
 		// Frame / Layout --------------------------------------------
 		
-		this.setSize(666,700);
+		this.setSize(660,700);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("MusikplayerOne");
 		this.setLayout(null);
+		this.getContentPane().setBackground(Color.black);
 		
 		player = new Player();
 		
@@ -71,37 +72,39 @@ public class MainFrame extends JFrame implements ActionListener{
 		label = new JLabel();
 		label.setBorder(border);
 		//label.setSize(634, 400);
-		label.setBounds(8, 8, 634, 500);			
+		label.setBounds(5, 5, 634, 500);			
 		label.setIcon(imageIcon);
 		label.setBackground(Color.black);
 		label.setOpaque(true);
 		label.setVerticalAlignment(JLabel.CENTER);
 		label.setHorizontalAlignment(JLabel.CENTER);
 			
+		resetIcon = new ImageIcon("res/ResetButton.png");
+		resetPressedIcon = new ImageIcon("res/ResetButtonPressed.png");
+		resetButton = new JButton();
+		resetButton.setBounds(150,515,100,100);
+		resetButton.addActionListener(this);
+		resetButton.setPressedIcon(resetPressedIcon);
+		resetButton.setIcon(resetIcon);
+		resetButton.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+		
 		playIcon = new ImageIcon("res/PlayButton.png");
 		playPressedIcon = new ImageIcon("res/PlayButtonPressed.png");
 		playButton = new JButton();
-		playButton.setBounds(285,515,100,100);
+		playButton.setBounds(260,515,100,100);
 		playButton.addActionListener(this);
 		playButton.setPressedIcon(playPressedIcon);
-		playButton.setIcon(playIcon);
-		
+		playButton.setIcon(playIcon);	
+		playButton.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
 		
 		stopIcon = new ImageIcon("res/StopButton.png");
 		stopPressedIcon = new ImageIcon("res/StopButtonPressed.png");
 		stopButton = new JButton();
-		stopButton.setBounds(390,515,100,100);
+		stopButton.setBounds(370,515,100,100);
 		stopButton.addActionListener(this);
 		stopButton.setPressedIcon(stopPressedIcon);
 		stopButton.setIcon(stopIcon);
-		
-		resetIcon = new ImageIcon("res/ResetButton.png");
-		resetPressedIcon = new ImageIcon("res/ResetButtonPressed.png");
-		resetButton = new JButton();
-		resetButton.setBounds(180,515,100,100);
-		resetButton.addActionListener(this);
-		resetButton.setPressedIcon(resetPressedIcon);
-		resetButton.setIcon(resetIcon);
+		stopButton.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
 		
 		this.add(label);		
 		this.add(resetButton);

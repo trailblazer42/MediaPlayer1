@@ -17,20 +17,15 @@ public class Player{
 	Player() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		
 		//file = new File("D:\\Programmieren\\Vorlagen\\Audio\\PortOfAdia.wav");
-		
+		if(clip!=null) {
 		loadFile();
-				 
-		//AudioInputStream audioStream = AudioSystem.getAudioInputStream(file); 	
-	
-		//clip = AudioSystem.getClip();	
-		//clip.open(audioStream);
-		
+		}		 		
 	}
 
 	public static void loadFile() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		
 		fileChooser = new JFileChooser();
-		fileChooser.setCurrentDirectory(new File("C:"));
+		fileChooser.setCurrentDirectory(new File("C:/"));
 		int response = fileChooser.showOpenDialog(null);
 		if(clip!=null) {
 			stop();
@@ -49,7 +44,11 @@ public class Player{
 		if(clip.isRunning()) {
 			clip.stop(); 
 		} else {
-			clip.start(); 
+			if(clip!=null) {	
+				clip.start(); 
+			} else {
+				// Buttons disabled when no file is selected yet?
+			}
 		}
 	}
 	
