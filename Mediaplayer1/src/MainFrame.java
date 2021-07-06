@@ -86,6 +86,11 @@ public class MainFrame extends JFrame implements ActionListener{
 		resetButton.addActionListener(this);
 		resetButton.setPressedIcon(resetPressedIcon);
 		resetButton.setIcon(resetIcon);
+		resetButton.setEnabled(false);
+		resetButton.setOpaque(false);
+		resetButton.setFocusPainted(false);
+		resetButton.setBorderPainted(false);
+		resetButton.setContentAreaFilled(false);
 		resetButton.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
 		
 		playIcon = new ImageIcon("res/PlayButton.png");
@@ -95,6 +100,11 @@ public class MainFrame extends JFrame implements ActionListener{
 		playButton.addActionListener(this);
 		playButton.setPressedIcon(playPressedIcon);
 		playButton.setIcon(playIcon);	
+		playButton.setOpaque(false);
+		playButton.setFocusPainted(false);
+		playButton.setBorderPainted(false);
+		playButton.setContentAreaFilled(false);
+		playButton.setEnabled(false);
 		playButton.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
 		
 		stopIcon = new ImageIcon("res/StopButton.png");
@@ -104,6 +114,11 @@ public class MainFrame extends JFrame implements ActionListener{
 		stopButton.addActionListener(this);
 		stopButton.setPressedIcon(stopPressedIcon);
 		stopButton.setIcon(stopIcon);
+		stopButton.setOpaque(false);
+		stopButton.setFocusPainted(false);
+		stopButton.setBorderPainted(false);
+		stopButton.setContentAreaFilled(false);
+		stopButton.setEnabled(false);
 		stopButton.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
 		
 		this.add(label);		
@@ -133,6 +148,10 @@ public class MainFrame extends JFrame implements ActionListener{
 		if(e.getSource()==openItem) {
 			System.out.println("Opening...");
 			//Player.stop();
+			stopButton.setEnabled(true);
+			playButton.setEnabled(true);
+			resetButton.setEnabled(true);
+
 			try {
 				Player.loadFile();
 			} catch (UnsupportedAudioFileException | IOException | LineUnavailableException e1) {
