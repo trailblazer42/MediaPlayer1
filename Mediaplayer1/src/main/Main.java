@@ -1,10 +1,10 @@
+package main;
 import java.io.IOException;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class Main {
-
 	
 	
 	public static void main(String[] args) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
@@ -16,9 +16,11 @@ public class Main {
 }
 
 /* TO DO
- * Menubar
- * Fileloader
+ * |Menubar					
+ * |Fileloader
+ * |Tastaturshortcuts einbauen
  * Datenbankanbindung?
  * PlayList
  * Bild aus Metadaten der Musikdatei
+ * 
  */
